@@ -1,0 +1,7 @@
+helloworld/application/package-info.class
+shoppingcart/domain/ShoppingCart.class
+shoppingcart/domain/ShoppingCart$LineItem.class
+helloworld/domain/package-info.class
+META-INF/akka-javasdk-components.conf
+helloworld/api/HelloWorldEndpoint.class
+helloworld/api/package-info.class

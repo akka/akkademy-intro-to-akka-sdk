@@ -1,5 +1,2 @@
-/workspaces/akkademy-akka-101/Exercises/1_end/akkazon/src/main/java/helloworld/api/package-info.java
-/workspaces/akkademy-akka-101/Exercises/1_end/akkazon/src/main/java/helloworld/application/package-info.java
-/workspaces/akkademy-akka-101/Exercises/1_end/akkazon/src/main/java/helloworld/domain/ShoppingCart.java
-/workspaces/akkademy-akka-101/Exercises/1_end/akkazon/src/main/java/helloworld/domain/ShoppingCartEvent.java
-/workspaces/akkademy-akka-101/Exercises/1_end/akkazon/src/main/java/helloworld/domain/package-info.java
+/workspaces/akkademy-akka-101/Exercises/1_end/akkazon/src/main/java/shoppingcart/domain/ShoppingCart.java
+/workspaces/akkademy-akka-101/Exercises/1_end/akkazon/src/main/java/shoppingcart/domain/ShoppingCartEvent.java

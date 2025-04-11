@@ -51,4 +51,64 @@ class ShoppingCartTest {
         assertTrue(emptyCart.items().isEmpty());
         assertFalse(emptyCart.checkedOut());
     }
+
+    // --- Tests for onItemAdded ---
+
+    @Test
+    void itemIsAddedToEmptyCart() {
+        var cart = new ShoppingCart("cart-1", List.of(), false);
+        var item = new ShoppingCart.LineItem("p1", "Akka Hoodie", 2);
+        var event = new ShoppingCartEvent.ItemAdded(item);
+
+        var updatedCart = cart.onItemAdded(event);
+
+        assertEquals(1, updatedCart.items().size());
+        assertEquals("p1", updatedCart.items().get(0).productId());
+        assertEquals(2, updatedCart.items().get(0).quantity());
+    }
+
+    @Test
+    void itemQuantityIsIncreasedWhenAlreadyInCart() {
+        var existingItem = new ShoppingCart.LineItem("p1", "Akka Hoodie", 2);
+        var cart = new ShoppingCart("cart-1", List.of(existingItem), false);
+
+        var additional = new ShoppingCart.LineItem("p1", "Akka Hoodie", 3);
+        var event = new ShoppingCartEvent.ItemAdded(additional);
+
+        var updatedCart = cart.onItemAdded(event);
+
+        assertEquals(1, updatedCart.items().size());
+        assertEquals("p1", updatedCart.items().get(0).productId());
+        assertEquals(5, updatedCart.items().get(0).quantity());
+    }
+
+    @Test
+    void cartImmutabilityIsPreserved() {
+        var existingItem = new ShoppingCart.LineItem("p1", "Akka Hoodie", 1);
+        var originalCart = new ShoppingCart("cart-1", List.of(existingItem), false);
+
+        var event = new ShoppingCartEvent.ItemAdded(
+            new ShoppingCart.LineItem("p1", "Akka Hoodie", 1));
+
+        var updatedCart = originalCart.onItemAdded(event);
+
+        // Original cart should remain unchanged
+        assertEquals(1, originalCart.items().get(0).quantity());
+        assertEquals(2, updatedCart.items().get(0).quantity());
+    }
+
+    @Test
+    void itemsAreSortedByProductId() {
+        var itemA = new ShoppingCart.LineItem("b-product", "Blue Jeans", 1);
+        var cart = new ShoppingCart("cart-1", List.of(itemA), false);
+
+        var event = new ShoppingCartEvent.ItemAdded(
+            new ShoppingCart.LineItem("a-product", "Akka Hoodie", 2));
+
+        var updatedCart = cart.onItemAdded(event);
+
+        assertEquals(2, updatedCart.items().size());
+        assertEquals("a-product", updatedCart.items().get(0).productId());
+        assertEquals("b-product", updatedCart.items().get(1).productId());
+    }
 }

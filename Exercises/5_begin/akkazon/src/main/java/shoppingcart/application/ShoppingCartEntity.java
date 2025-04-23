@@ -41,6 +41,6 @@ public class ShoppingCartEntity extends EventSourcedEntity<ShoppingCart, Shoppin
         var event = new ShoppingCartEvent.ItemAdded(item);
         return effects()
             .persist(event)
-            .thenReply(newState -> Done.getInstance());
+            .thenReply(newState -> Done.done());
     }
 }

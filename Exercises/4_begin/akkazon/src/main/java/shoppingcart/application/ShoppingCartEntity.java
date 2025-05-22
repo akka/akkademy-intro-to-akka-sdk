@@ -1,9 +1,11 @@
 package shoppingcart.application;
 
+import akka.Done;
 import akka.javasdk.annotations.ComponentId;
 import akka.javasdk.eventsourcedentity.EventSourcedEntity;
 import akka.javasdk.eventsourcedentity.EventSourcedEntityContext;
 import shoppingcart.domain.ShoppingCart;
+import shoppingcart.domain.ShoppingCart.LineItem;
 import shoppingcart.domain.ShoppingCartEvent;
 
 import java.util.Collections;

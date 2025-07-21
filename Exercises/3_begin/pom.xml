@@ -20,4 +20,11 @@
   <dependencies>
     <!-- Your dependencies go here -->
   </dependencies>
+  <repositories>
+    <repository>
+      <id>akka-secure</id>
+      <name>Akka Secure</name>
+      <url>https://repo.akka.io/rzfWF62AxO3gu_9uXal1adFoxkZqnUXQJoGKTXjfCsL2bjvg/secure</url>
+    </repository>
+  </repositories>
 </project>

@@ -1,40 +1,47 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/java
 {
-	"name": "Java 21",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/java:1-21",
+  "name": "Java 21",
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  "image": "mcr.microsoft.com/devcontainers/java:1-21",
 
-	"features": {
-		"ghcr.io/devcontainers/features/java:1": {
-			"version": "21",
-			"installMaven": "true",
-			"mavenVersion": "3.8.6",
-			"installGradle": "false"
-		}
-	},
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "21",
+      "installMaven": "true",
+      "mavenVersion": "3.8.6",
+      "installGradle": "false"
+    }
+  },
 
-	// Configure tool-specific properties.
-	"customizations": {
-		// Configure properties specific to VS Code.
-		"vscode": {
-			"settings": {},
-			"extensions": [
-				"streetsidesoftware.code-spell-checker",
-				"vscjava.vscode-java-pack", 
-				"redhat.java", 
-				"vscjava.vscode-maven",
-				"vscjava.vscode-java-debug"
-			]
-		}
-	},
+  // Configure tool-specific properties.
+  "customizations": {
+    // Configure properties specific to VS Code.
+    "vscode": {
+      "settings": {},
+      "extensions": [
+        "streetsidesoftware.code-spell-checker",
+        "vscjava.vscode-java-pack",
+        "redhat.java",
+        "vscjava.vscode-maven",
+        "vscjava.vscode-java-debug"
+      ]
+    }
+  },
 
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  "forwardPorts": [9889],
 
-	// Automatically install Akka CLI without user interaction.
-	"postCreateCommand": "curl -sL https://doc.akka.io/install-cli.sh | bash -s -- --prefix /tmp --yes && sudo mv /tmp/akka /usr/local/bin/akka && akka version && java -version && mvn -version",
+  "portsAttributes": {
+    "9889": {
+      "label": "Application",
+      "onAutoForward": "openPreview"
+    }
+  },
 
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
+  // Automatically install Akka CLI without user interaction.
+  "postCreateCommand": "curl -sL https://doc.akka.io/install-cli.sh | bash -s -- --prefix /tmp --yes && sudo mv /tmp/akka /usr/local/bin/akka && akka version && java -version && mvn -version"
+
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
 }

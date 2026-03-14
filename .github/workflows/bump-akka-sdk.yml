@@ -1,0 +1,56 @@
+name: Bump akka-javasdk-parent
+
+on:
+  schedule:
+    - cron: '0 8 * * *'  # Daily at 8am UTC
+  workflow_dispatch:
+
+jobs:
+  bump-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: 'maven'
+
+      - name: Bump akka-javasdk-parent in all exercises
+        run: |
+          find Exercises -maxdepth 2 -name pom.xml | while read pom; do
+            echo "Updating $pom"
+            mvn -f "$pom" versions:update-parent -DgenerateBackupPoms=false
+          done
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Verify solution projects
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          find Exercises -maxdepth 1 -type d -name '*_solution' | while read dir; do
+            echo "Verifying $dir"
+            mvn -f "$dir/pom.xml" verify
+          done
+
+      - name: Create Pull Request
+        if: steps.changes.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore: bump akka-javasdk-parent to latest version'
+          title: 'chore: bump akka-javasdk-parent to latest version'
+          body: |
+            Automated bump of `akka-javasdk-parent` to the latest available version across all exercise projects.
+
+            All `_solution` projects have been verified with `mvn verify`.
+          branch: chore/bump-akka-javasdk-parent
+          delete-branch: true

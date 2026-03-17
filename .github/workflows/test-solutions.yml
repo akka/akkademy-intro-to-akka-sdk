@@ -1,0 +1,42 @@
+name: Test Solutions
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "Exercises/**"
+
+jobs:
+  test:
+    if: github.actor == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        solution:
+          - 0_solution
+          - 1_solution
+          - 2_solution
+          - 3_solution
+          - 4_solution
+          - 5_solution
+          - 6_solution
+          - 7_solution
+          - 8_solution
+          - 9_solution
+          - 10_solution
+          - 11_solution
+          - 12_solution
+          - 13_solution
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          java-version: "21"
+          distribution: temurin
+          cache: maven
+
+      - name: Test ${{ matrix.solution }}
+        working-directory: Exercises/${{ matrix.solution }}
+        run: mvn test --batch-mode

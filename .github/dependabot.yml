@@ -1,0 +1,225 @@
+version: 2
+updates:
+  - package-ecosystem: maven
+    directory: /Exercises/0_begin
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    allow:
+      - dependency-name: akka-javasdk-parent
+
+  - package-ecosystem: maven
+    directory: /Exercises/0_solution
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    allow:
+      - dependency-name: akka-javasdk-parent
+
+  - package-ecosystem: maven
+    directory: /Exercises/1_begin
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    allow:
+      - dependency-name: akka-javasdk-parent
+
+  - package-ecosystem: maven
+    directory: /Exercises/1_solution
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    allow:
+      - dependency-name: akka-javasdk-parent
+
+  - package-ecosystem: maven
+    directory: /Exercises/2_begin
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    allow:
+      - dependency-name: akka-javasdk-parent
+
+  - package-ecosystem: maven
+    directory: /Exercises/2_solution
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    allow:
+      - dependency-name: akka-javasdk-parent
+
+  - package-ecosystem: maven
+    directory: /Exercises/3_begin
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    allow:
+      - dependency-name: akka-javasdk-parent
+
+  - package-ecosystem: maven
+    directory: /Exercises/3_solution
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    allow:
+      - dependency-name: akka-javasdk-parent
+
+  - package-ecosystem: maven
+    directory: /Exercises/4_begin
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    allow:
+      - dependency-name: akka-javasdk-parent
+
+  - package-ecosystem: maven
+    directory: /Exercises/4_solution
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    allow:
+      - dependency-name: akka-javasdk-parent
+
+  - package-ecosystem: maven
+    directory: /Exercises/5_begin
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    allow:
+      - dependency-name: akka-javasdk-parent
+
+  - package-ecosystem: maven
+    directory: /Exercises/5_solution
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    allow:
+      - dependency-name: akka-javasdk-parent
+
+  - package-ecosystem: maven
+    directory: /Exercises/6_begin
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    allow:
+      - dependency-name: akka-javasdk-parent
+
+  - package-ecosystem: maven
+    directory: /Exercises/6_solution
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    allow:
+      - dependency-name: akka-javasdk-parent
+
+  - package-ecosystem: maven
+    directory: /Exercises/7_begin
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    allow:
+      - dependency-name: akka-javasdk-parent
+
+  - package-ecosystem: maven
+    directory: /Exercises/7_solution
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    allow:
+      - dependency-name: akka-javasdk-parent
+
+  - package-ecosystem: maven
+    directory: /Exercises/8_begin
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    allow:
+      - dependency-name: akka-javasdk-parent
+
+  - package-ecosystem: maven
+    directory: /Exercises/8_solution
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    allow:
+      - dependency-name: akka-javasdk-parent
+
+  - package-ecosystem: maven
+    directory: /Exercises/9_begin
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    allow:
+      - dependency-name: akka-javasdk-parent
+
+  - package-ecosystem: maven
+    directory: /Exercises/9_solution
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    allow:
+      - dependency-name: akka-javasdk-parent
+
+  - package-ecosystem: maven
+    directory: /Exercises/10_begin
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    allow:
+      - dependency-name: akka-javasdk-parent
+
+  - package-ecosystem: maven
+    directory: /Exercises/10_solution
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    allow:
+      - dependency-name: akka-javasdk-parent
+
+  - package-ecosystem: maven
+    directory: /Exercises/11_begin
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    allow:
+      - dependency-name: akka-javasdk-parent
+
+  - package-ecosystem: maven
+    directory: /Exercises/11_solution
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    allow:
+      - dependency-name: akka-javasdk-parent
+
+  - package-ecosystem: maven
+    directory: /Exercises/12_begin
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    allow:
+      - dependency-name: akka-javasdk-parent
+
+  - package-ecosystem: maven
+    directory: /Exercises/12_solution
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    allow:
+      - dependency-name: akka-javasdk-parent
+
+  - package-ecosystem: maven
+    directory: /Exercises/13_begin
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    allow:
+      - dependency-name: akka-javasdk-parent
+
+  - package-ecosystem: maven
+    directory: /Exercises/13_solution
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 1
+    allow:
+      - dependency-name: akka-javasdk-parent
